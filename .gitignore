@@ -1,0 +1,26 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Build artifacts
+/dist/
+*.app
+DerivedData/
+
+# macOS
+.DS_Store
+*.swp
+
+# Xcode (in case contributors open in Xcode)
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Pro / secrets (never commit license signing material)
+/Pro/secrets/
+*.p12
+*.cer
+
+# Local agent / editor tooling
+.claude/
+*.zip

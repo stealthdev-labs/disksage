@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DiskSage — the open-source disk cleaner that knows what's safe to delete</title>
+<meta name="description" content="A native macOS disk visualizer with a built-in advisor that tells you what's safe junk, what to review, and what to never touch. Finds duplicates and hidden app caches. Free &amp; open source.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:title" content="DiskSage — know what's safe to delete">
+<meta property="og:description" content="A beautiful sunburst map of your Mac's disk, plus an advisor that rates every folder Safe, Review, or Keep. Finds duplicates and hidden caches. Free &amp; open source.">
+<meta property="og:image" content="assets/icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <img src="assets/icon.png" alt="" width="32" height="32">
+    <span>DiskSage</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#peek">Screenshots</a>
+    <a href="#why">Why it's better</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Download</a>
+    <a class="ghost" href="https://github.com/stealthdev-labs/disksage">GitHub</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow">Open source · Native macOS 14+</p>
+      <h1>Know what's <span class="grad">safe to delete</span>.</h1>
+      <p class="lede">
+        DiskSage maps your disk as a beautiful sunburst — then goes further than
+        any other cleaner: it tells you in plain language what's regenerable junk,
+        what to review, and what to never touch.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://github.com/stealthdev-labs/disksage/releases/latest/download/DiskSage-macOS.zip">Download for macOS — free</a>
+        <a class="btn" href="https://github.com/stealthdev-labs/disksage">Build from source</a>
+      </div>
+      <p class="reassure">Everything goes to the Trash, never a hard delete. 100% offline. No account.</p>
+    </div>
+
+    <!-- Faux app window: Explore -->
+    <div class="hero-art" data-reveal style="--d:120ms">
+      <div class="window tilt" aria-hidden="true">
+        <div class="window-bar">
+          <div class="traffic"><i></i><i></i><i></i></div>
+          <div class="seg">
+            <button class="on">Explore</button>
+            <button>Biggest</button>
+            <button>Clean&nbsp;up</button>
+          </div>
+          <div class="wintools">
+            <svg viewBox="0 0 24 24" class="ti"><path d="M4 12a8 8 0 1 1 2.3 5.6M4 12V7m0 5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="window-body explore-body">
+          <div class="explore-main">
+            <div class="crumb"><b>Macintosh&nbsp;HD</b><span>›</span>you<span>›</span>Library</div>
+            <div class="sunburst">
+              <div class="ring ring-outer"></div>
+              <div class="ring ring-inner"></div>
+              <div class="hole">
+                <span class="hole-size">487&nbsp;GB</span>
+                <span class="hole-label">Macintosh&nbsp;HD</span>
+              </div>
+            </div>
+            <div class="app-legend">
+              <span><i style="--c:#e65773"></i>Video</span>
+              <span><i style="--c:#5c94eb"></i>Code</span>
+              <span><i style="--c:#5cb88c"></i>Images</span>
+              <span><i style="--c:#a87ddb"></i>Archives</span>
+              <span><i style="--c:#f29b40"></i>Audio</span>
+            </div>
+          </div>
+          <aside class="inspector">
+            <div class="insp-head">
+              <span class="fi" style="--c:#6b7280">
+                <svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="currentColor"/></svg>
+              </span>
+              Caches
+            </div>
+            <div class="insp-size">8.1&nbsp;GB<em>34% of Library</em></div>
+            <div class="verdict-card safe">
+              <span class="pill safe"><b></b>Safe to delete</span>
+              <p>Per-app caches under ~/Library/Caches. Apps recreate them on demand.</p>
+            </div>
+            <div class="insp-meta">
+              <div><span>Path</span>~/Library/Caches</div>
+              <div><span>Contains</span>42,108 files</div>
+              <div><span>Modified</span>Today · 2h ago</div>
+            </div>
+            <div class="insp-actions">
+              <button>Reveal</button>
+              <button class="danger">Move to Trash</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="strip-inner">
+      <div class="stat"><b>3</b><span>verdicts on every folder</span></div>
+      <div class="stat"><b>25+</b><span>smart cleanup categories</span></div>
+      <div class="stat"><b>0</b><span>network calls, ever</span></div>
+      <div class="stat"><b>$0</b><span>free &amp; open source</span></div>
+    </div>
+  </div>
+
+  <!-- VERDICTS -->
+  <section id="advisor" class="verdicts">
+    <h2 data-reveal>An advisor, not just a chart</h2>
+    <p class="section-sub" data-reveal>
+      Every folder DiskSage finds gets one of three verdicts from a local rules
+      engine — deterministic, auditable, and completely offline. No cloud, no
+      guessing, no sending your filenames anywhere.
+    </p>
+    <div class="verdict-grid">
+      <article class="verdict safe" data-reveal>
+        <div class="dot"></div>
+        <h3>Safe to delete</h3>
+        <p>Regenerable junk — caches, build artifacts, logs. Apps rebuild it on demand. Clear it without a second thought.</p>
+      </article>
+      <article class="verdict review" data-reveal style="--d:70ms">
+        <div class="dot"></div>
+        <h3>Review first</h3>
+        <p><code>node_modules</code>, old iOS backups, Docker, duplicates. Deletable, but might hold something you want. DiskSage flags it so you decide.</p>
+      </article>
+      <article class="verdict keep" data-reveal style="--d:140ms">
+        <div class="dot"></div>
+        <h3>Keep</h3>
+        <p>System files, app bundles, keychains, your own documents. DiskSage will never suggest deleting these — and auto-clean never touches them.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PEEK INSIDE -->
+  <section id="peek" class="peek">
+    <h2 data-reveal>A look inside</h2>
+    <p class="section-sub" data-reveal>Three views, one job: see where your space went, then reclaim it — safely.</p>
+
+    <div class="shot-row">
+      <!-- Clean up shot -->
+      <figure class="shot" data-reveal>
+        <div class="window">
+          <div class="window-bar">
+            <div class="traffic"><i></i><i></i><i></i></div>
+            <div class="seg"><button>Explore</button><button>Biggest</button><button class="on">Clean&nbsp;up</button></div>
+            <div class="wintools"></div>
+          </div>
+          <div class="window-body cleanup-body">
+            <div class="summary-bar">
+              <div class="sum-text">
+                <b>Reclaim up to 31.6&nbsp;GB</b>
+                <span>18 suggestions · 9.8&nbsp;GB selected</span>
+              </div>
+              <div class="sum-actions">
+                <button>Select safe</button>
+                <button class="prim">Clean Selected</button>
+              </div>
+            </div>
+            <div class="sugg-list">
+              <div class="sugg">
+                <span class="chk"></span>
+                <span class="ci" style="--c:#f2b53a"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 10h16" stroke="currentColor" stroke-width="2"/></svg></span>
+                <div class="sugg-txt"><div class="sugg-top">Telegram — temporary files <span class="pill review mini"><b></b>Review</span></div><div class="sugg-sub">App-sandbox temp data — videos the app re-downloads on demand.</div></div>
+                <div class="sugg-size">12.4&nbsp;GB</div>
+              </div>
+              <div class="sugg on">
+                <span class="chk on"></span>
+                <span class="ci" style="--c:#4ec77a"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9-6 1 1-6z" fill="currentColor"/></svg></span>
+                <div class="sugg-txt"><div class="sugg-top">Xcode DerivedData <span class="pill safe mini"><b></b>Safe</span></div><div class="sugg-sub">Build intermediates and indexes. Xcode rebuilds them next build.</div></div>
+                <div class="sugg-size">6.3&nbsp;GB</div>
+              </div>
+              <div class="sugg">
+                <span class="chk"></span>
+                <span class="ci" style="--c:#f2b53a"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="12" r="1.4" fill="currentColor"/></svg></span>
+                <div class="sugg-txt"><div class="sugg-top">App Container Caches — Discord <span class="pill review mini"><b></b>Review</span></div><div class="sugg-sub">Chromium GPU &amp; code caches inside the app sandbox.</div></div>
+                <div class="sugg-size">2.1&nbsp;GB</div>
+              </div>
+              <div class="sugg">
+                <span class="chk"></span>
+                <span class="ci" style="--c:#f2b53a"><svg viewBox="0 0 24 24"><path d="M8 8h10v12H8z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 4h10v2H6zM6 4v12" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+                <div class="sugg-txt"><div class="sugg-top">2× model.pth <span class="pill review mini"><b></b>Review</span></div><div class="sugg-sub">Identical copies (1.74&nbsp;GB each). Keep one, free the rest.</div></div>
+                <div class="sugg-size">1.74&nbsp;GB</div>
+              </div>
+              <div class="sugg">
+                <span class="chk"></span>
+                <span class="ci" style="--c:#f2b53a"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                <div class="sugg-txt"><div class="sugg-top">Old, Large Files — render-final.mov <span class="pill review mini"><b></b>Review</span></div><div class="sugg-sub">Untouched for 2y · in ~/Movies.</div></div>
+                <div class="sugg-size">1.2&nbsp;GB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption>Clean up — grouped, explained, one click to reclaim.</figcaption>
+      </figure>
+
+      <!-- Biggest files shot -->
+      <figure class="shot" data-reveal style="--d:90ms">
+        <div class="window">
+          <div class="window-bar">
+            <div class="traffic"><i></i><i></i><i></i></div>
+            <div class="seg"><button>Explore</button><button class="on">Biggest</button><button>Clean&nbsp;up</button></div>
+            <div class="wintools"></div>
+          </div>
+          <div class="window-body big-body">
+            <div class="big-head"><b>Biggest files</b><span>200 largest · 96.4&nbsp;GB total</span></div>
+            <div class="file-row"><span class="ci" style="--c:#e65773"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></span><div class="fr-txt"><b>claudevm.bundle</b><span>~/Library/Application Support · 2mo ago</span></div><div class="fr-size">9.7&nbsp;GB</div></div>
+            <div class="file-row"><span class="ci" style="--c:#5c94eb"><svg viewBox="0 0 24 24"><path d="M6 4h9l5 5v11H6z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><div class="fr-txt"><b>weights.bin</b><span>~/…/Google/Chrome · 3w ago</span></div><div class="fr-size">4.0&nbsp;GB</div></div>
+            <div class="file-row"><span class="ci" style="--c:#5cb88c"><svg viewBox="0 0 24 24"><path d="M6 4h9l5 5v11H6z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><div class="fr-txt"><b>db_sqlite</b><span>~/…/Telegram · today</span></div><div class="fr-size">3.9&nbsp;GB</div></div>
+            <div class="file-row"><span class="ci" style="--c:#a87ddb"><svg viewBox="0 0 24 24"><path d="M6 4h9l5 5v11H6z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><div class="fr-txt"><b>model.pth</b><span>~/Documents/Codex · 1mo ago</span></div><div class="fr-size">1.74&nbsp;GB</div></div>
+            <div class="file-row"><span class="ci" style="--c:#e65773"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></span><div class="fr-txt"><b>lecture-04.mp4</b><span>~/Downloads · 8mo ago</span></div><div class="fr-size">1.3&nbsp;GB</div></div>
+          </div>
+        </div>
+        <figcaption>Biggest — the single fastest way to spot a space hog.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WHY BETTER -->
+  <section id="why" class="why">
+    <h2 data-reveal>Why DiskSage, not “that other cleaner”</h2>
+    <p class="section-sub" data-reveal>Most cleaners show a pretty chart <em>or</em> delete things for you. DiskSage adds the part that matters — judgement — and finds the space others miss.</p>
+    <div class="cmp" data-reveal>
+      <div class="cmp-row cmp-head">
+        <div>What matters</div>
+        <div class="them">Typical cleaners</div>
+        <div class="us">DiskSage</div>
+      </div>
+      <div class="cmp-row">
+        <div>Tells you <em>why</em> something is safe</div>
+        <div class="them"><span class="x">—</span> a list, no context</div>
+        <div class="us"><span class="ok"></span> plain-language verdict on every item</div>
+      </div>
+      <div class="cmp-row">
+        <div>Finds hidden app-container caches</div>
+        <div class="them"><span class="x">—</span> misses sandbox <code>tmp</code></div>
+        <div class="us"><span class="ok"></span> catches Telegram, Discord, Electron caches</div>
+      </div>
+      <div class="cmp-row">
+        <div>Duplicate-file finder</div>
+        <div class="them"><span class="x">—</span> rare or paid add-on</div>
+        <div class="us"><span class="ok"></span> byte-for-byte, built in</div>
+      </div>
+      <div class="cmp-row">
+        <div>Can it lose your data?</div>
+        <div class="them"><span class="x">!</span> some hard-delete</div>
+        <div class="us"><span class="ok"></span> Trash only — always reversible</div>
+      </div>
+      <div class="cmp-row">
+        <div>Open source &amp; offline</div>
+        <div class="them"><span class="x">—</span> closed, phones home</div>
+        <div class="us"><span class="ok"></span> MIT, zero network calls</div>
+      </div>
+      <div class="cmp-row">
+        <div>Price</div>
+        <div class="them"><span class="x">$</span> $30–90 / year</div>
+        <div class="us"><span class="ok"></span> $5 once — or free from source</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <h2 data-reveal>Built to reclaim space, safely</h2>
+    <div class="feature-grid">
+      <article class="feature" data-reveal>
+        <div class="ficon">◎</div>
+        <h3>Interactive sunburst</h3>
+        <p>A radial map of your disk à la DaisyDisk. Click a ring to drill in, the center to step back. Color by file type or by delete-safety.</p>
+      </article>
+      <article class="feature" data-reveal style="--d:60ms">
+        <div class="ficon">⧉</div>
+        <h3>Duplicate finder</h3>
+        <p>Byte-for-byte identical copies — same model downloaded twice, the same video in two folders — grouped so you can keep one and free the rest.</p>
+      </article>
+      <article class="feature" data-reveal style="--d:120ms">
+        <div class="ficon">▤</div>
+        <h3>Biggest files, instantly</h3>
+        <p>A flat, ranked list of your largest individual files with age and a safety verdict. The fastest path to a quick win.</p>
+      </article>
+      <article class="feature" data-reveal>
+        <div class="ficon">◳</div>
+        <h3>Hidden cache detection</h3>
+        <p>Finds the regenerable piles other tools miss — app-sandbox <code>tmp</code>, Chromium/Electron caches inside Discord, Slack, VS Code and more.</p>
+      </article>
+      <article class="feature" data-reveal style="--d:60ms">
+        <div class="ficon">⏲</div>
+        <h3>Old, large files</h3>
+        <p>Big personal files you haven't touched in months — old exports, installers, disk images — flagged for review (never auto-deleted).</p>
+      </article>
+      <article class="feature" data-reveal style="--d:120ms">
+        <div class="ficon">↺</div>
+        <h3>Reversible by design</h3>
+        <p>DiskSage never hard-deletes. Everything it removes goes to the Trash, so any mistake is one ⌘Z away.</p>
+      </article>
+      <article class="feature" data-reveal>
+        <div class="ficon">⏱</div>
+        <h3>Scheduled auto-clean <span class="pro">Pro</span></h3>
+        <p>Hands-off sweeps of regenerable junk every few hours. Only ever touches items rated <strong>Safe</strong> — never your data.</p>
+      </article>
+      <article class="feature" data-reveal style="--d:60ms">
+        <div class="ficon">🔒</div>
+        <h3>Private &amp; offline</h3>
+        <p>No network calls, no telemetry, no account. The advisor ships inside the app. Your disk stays your business.</p>
+      </article>
+      <article class="feature" data-reveal style="--d:120ms">
+        <div class="ficon">&lt;/&gt;</div>
+        <h3>Fully open source</h3>
+        <p>The entire app — including auto-clean — is on GitHub under MIT. Read every safety rule. Disagree? Send a one-line PR.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- HOW THE ADVISOR WORKS -->
+  <section class="how">
+    <div class="how-inner" data-reveal>
+      <h2>The advisor is plain Swift, not a black box</h2>
+      <p class="section-sub">It's curated knowledge of the macOS filesystem — path rules and a few heuristics — that ships inside the binary. Deterministic, auditable, offline.</p>
+      <div class="how-grid">
+        <div class="how-card"><b>Deterministic</b><p>The same folder always gets the same verdict. No surprises, no model drift.</p></div>
+        <div class="how-card"><b>Auditable</b><p>Every rule is readable Swift in <code>SafetyEngine.swift</code>. Challenge one with a PR.</p></div>
+        <div class="how-card"><b>Offline</b><p>Your filenames never leave your Mac. There's nothing to send anywhere.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD / SUPPORT -->
+  <section id="pricing" class="pricing">
+    <h2 data-reveal>Free. Open source. Yours.</h2>
+    <p class="section-sub" data-reveal>Every feature — including auto-clean — is free under the MIT license. Grab the prebuilt app, or build it yourself. If it helped, support is welcome but never required.</p>
+    <div class="price-grid">
+      <article class="plan featured" data-reveal>
+        <div class="badge">Recommended</div>
+        <h3>Download</h3>
+        <p class="price">Free</p>
+        <ul>
+          <li>Prebuilt DiskSage.app for macOS 14+</li>
+          <li>Every feature, including auto-clean</li>
+          <li>No account, no telemetry</li>
+          <li>Updates via GitHub Releases</li>
+        </ul>
+        <a class="btn primary" href="https://github.com/stealthdev-labs/disksage/releases/latest/download/DiskSage-macOS.zip">Download for macOS</a>
+        <p class="fine">Ad-hoc signed — right-click → Open on first launch.</p>
+      </article>
+      <article class="plan" data-reveal style="--d:80ms">
+        <h3>Build from source</h3>
+        <p class="price">Free</p>
+        <ul>
+          <li>The complete app, every feature</li>
+          <li>Read &amp; audit every safety rule</li>
+          <li>MIT licensed, hack away</li>
+          <li>Only needs Xcode Command Line Tools</li>
+        </ul>
+        <a class="btn" href="https://github.com/stealthdev-labs/disksage">Get the code</a>
+        <p class="fine"><code>swift run</code> — that's it.</p>
+      </article>
+    </div>
+    <div class="support" id="support" data-reveal>
+      <h3>Like it? Support development</h3>
+      <p>DiskSage is built in the open and given away for free. Donations are optional and simply fund the work — nothing is gated behind them.</p>
+      <a class="btn" href="https://github.com/stealthdev-labs/disksage#support">Support DiskSage</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <h2 data-reveal>Questions</h2>
+    <div class="faq-grid">
+      <details data-reveal>
+        <summary>Is the “AI” actually a cloud model?</summary>
+        <p>No. DiskSage's advisor is a local rules engine — curated knowledge of the macOS filesystem written in plain Swift. It's deterministic and runs entirely offline. You can read every rule in <code>SafetyEngine.swift</code>.</p>
+      </details>
+      <details data-reveal>
+        <summary>How does the duplicate finder work?</summary>
+        <p>It groups files by exact size, then SHA-256 hashes the candidates that collide — so matches are byte-for-byte certain, not guesses. It keeps one copy and offers the rest. Your files, so it only ever flags them for review.</p>
+      </details>
+      <details data-reveal>
+        <summary>Is it really free?</summary>
+        <p>Yes — every feature, including auto-clean, under the MIT license. Download the prebuilt app or build from source; there's no paywall and no account. If it saved you space, donations are welcome but never required.</p>
+      </details>
+      <details data-reveal>
+        <summary>Can it delete something important by accident?</summary>
+        <p>DiskSage never hard-deletes — everything goes to the Trash, recoverable until you empty it. It also rates risky items “Review” or “Keep” and never auto-cleans anything but “Safe” junk.</p>
+      </details>
+      <details data-reveal>
+        <summary>What does auto-clean actually remove?</summary>
+        <p>Only regenerable junk in <code>~/Library/Caches</code>, <code>~/Library/Logs</code>, and Xcode's DerivedData — and only items rated Safe. It runs on launch and every 6 hours, always to the Trash.</p>
+      </details>
+      <details data-reveal>
+        <summary>What are the requirements?</summary>
+        <p>macOS 14 (Sonoma) or later. To scan and clean protected folders, grant Full Disk Access in System Settings → Privacy &amp; Security.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="closer">
+    <div data-reveal>
+      <h2>Reclaim your disk — without the anxiety.</h2>
+      <div class="cta-row center">
+        <a class="btn primary" href="https://github.com/stealthdev-labs/disksage/releases/latest/download/DiskSage-macOS.zip">Download for macOS</a>
+        <a class="btn" href="https://github.com/stealthdev-labs/disksage">Star on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="foot-brand">
+    <img src="assets/icon.png" alt="" width="28" height="28">
+    <span>DiskSage</span>
+  </div>
+  <nav>
+    <a href="https://github.com/stealthdev-labs/disksage">GitHub</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Download</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <p class="copy">Open source under the MIT License. Built for macOS.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
