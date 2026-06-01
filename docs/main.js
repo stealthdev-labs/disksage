@@ -8,6 +8,24 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  // --- Copy-to-clipboard for the donation wallet ---
+  document.querySelectorAll(".copy-wallet").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const addr = btn.getAttribute("data-wallet") || "";
+      try {
+        await navigator.clipboard.writeText(addr);
+      } catch (e) {
+        const r = document.createRange();
+        const code = btn.parentElement.parentElement.querySelector(".wallet");
+        if (code) { r.selectNode(code); getSelection().removeAllRanges(); getSelection().addRange(r); }
+      }
+      const label = btn.textContent;
+      btn.textContent = "Copied ✓";
+      btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = label; btn.classList.remove("copied"); }, 1600);
+    });
+  });
+
   // --- Scroll reveal ---
   const reveal = document.querySelectorAll("[data-reveal]");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

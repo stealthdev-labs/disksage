@@ -138,9 +138,10 @@ not DRM.
 If DiskSage reclaimed some space and you'd like to say thanks, donations are
 welcome but never required. They simply fund development.
 
-<!-- Add your donation link(s) here. For an individual without a registered
-business, low-friction options include Boosty, Ko-fi, or a crypto address. -->
-- _Donation link coming soon._
+- **USDT (TRC-20 / TRON):** `TYWkDcERszTCfYZjeScKXPmn2LrDugdMmc`
+<!-- Boosty link to be added. -->
+
+Nothing is gated behind donations — the entire app is free.
 
 ## How auto-clean works (Pro)
 

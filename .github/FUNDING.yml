@@ -1,12 +1,8 @@
 # Shows a "Sponsor" button on the GitHub repo. DiskSage is free & open source;
 # this is optional "support development", not a paywall.
-#
-# Fill in whichever applies and delete the rest. For an individual without a
-# registered business, donation platforms (Boosty / Ko-fi / a crypto address)
-# are the lowest-friction options — see the "Support" section of the README.
+custom:
+  - "https://stealthdev-labs.github.io/disksage/#support"
 
-# github: [your-github-username]        # GitHub Sponsors (payout availability varies by country)
-# ko_fi: your-kofi-name                 # one-off "buy me a coffee" tips
+# Boosty / Ko-fi links can be added here once set up, e.g.:
 # custom:
-#   - "https://boosty.to/your-name"     # Russia-friendly, works for individuals
-#   - "https://your-donation-link"
+#   - "https://boosty.to/your-name"
