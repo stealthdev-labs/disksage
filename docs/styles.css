@@ -295,9 +295,16 @@ h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-align: center; }
 .support h3 { font-size: 19px; }
 .support p { color: var(--muted); font-size: 15px; margin: 8px auto 18px; max-width: 52ch; }
 .donate-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.copy-wallet { cursor: pointer; transition: transform .12s var(--ease), background .2s, box-shadow .2s; }
+.copy-wallet {
+  cursor: pointer;
+  background: rgba(91,107,242,.12);
+  border-color: rgba(91,107,242,.45);
+  color: var(--text);
+  transition: transform .12s var(--ease), background .2s, border-color .2s, box-shadow .2s;
+}
+.copy-wallet:hover { background: rgba(91,107,242,.2); border-color: var(--brand-start); transform: translateY(-2px); }
 .copy-wallet:active { transform: scale(.98); }
-.copy-wallet.copied { background: var(--safe); box-shadow: 0 10px 30px -8px rgba(78,199,122,.5); }
+.copy-wallet.copied { background: var(--safe); border-color: var(--safe); color: #07120b; box-shadow: 0 10px 30px -8px rgba(78,199,122,.5); }
 .wallet { display: inline-block; margin-top: 14px; font-size: 12.5px; color: var(--muted); background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; word-break: break-all; max-width: 100%; }
 .support .fine { margin-top: 8px; }
 
