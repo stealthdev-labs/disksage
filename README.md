@@ -10,12 +10,16 @@ A native macOS app in the spirit of DaisyDisk — a beautiful sunburst map of
 your disk — plus a built-in advisor that tells you, in plain language, what's
 *safe junk*, what to *review first*, and what to *never touch*.
 
-[Features](#features) · [How the advisor works](#the-advisor-not-a-cloud-ai) · [Build from source](#build-from-source) · [Pro & pricing](#pro--pricing) · [Contributing](CONTRIBUTING.md)
+[**Download for macOS**](https://github.com/stealthdev-labs/disksage/releases/latest) · [Live demo](https://stealthdev-labs.github.io/disksage/) · [Features](#features) · [How the advisor works](#the-advisor-not-a-cloud-ai) · [Contributing](CONTRIBUTING.md)
 
 [![CI](https://github.com/stealthdev-labs/disksage/actions/workflows/ci.yml/badge.svg)](https://github.com/stealthdev-labs/disksage/actions/workflows/ci.yml)
 ![platform](https://img.shields.io/badge/platform-macOS%2014%2B-blue)
 ![language](https://img.shields.io/badge/Swift-5.9%2B-orange)
 ![license](https://img.shields.io/badge/license-MIT-green)
+
+<br>
+
+<img src="assets/screenshot.png" width="840" alt="DiskSage — a sunburst map of your disk with a safety advisor that rates every folder Safe, Review, or Keep">
 
 </div>
 
@@ -33,6 +37,15 @@ Every folder it finds is rated with one of three verdicts:
 | 🟢 **Safe to delete** | Regenerable junk — caches, build artifacts, logs. Apps rebuild it. |
 | 🟡 **Review first** | Deletable, but may hold real data (`node_modules`, old iOS backups, Docker). |
 | 🔴 **Keep** | System files, app bundles, keychains, your own documents. DiskSage will never suggest these. |
+
+## Screenshots
+
+Three views, one job — explore where space went, spot your biggest files, and
+clean up with confidence:
+
+<div align="center">
+<img src="assets/screenshot-views.png" width="900" alt="DiskSage Clean up and Biggest files views">
+</div>
 
 Everything DiskSage removes goes to the **Trash**, never a hard delete — so a
 mistake is always one ⌘Z away.
