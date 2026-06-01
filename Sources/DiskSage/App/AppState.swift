@@ -279,7 +279,8 @@ final class AppState: ObservableObject {
         guard isPro, autoCleanEnabled else { return }
         Task { await runAutoCleanSweep() }
         let timer = Timer(timeInterval: 6 * 3600, repeats: true) { [weak self] _ in
-            Task { @MainActor in await self?.runAutoCleanSweep() }
+            guard let self else { return }
+            Task { @MainActor in await self.runAutoCleanSweep() }
         }
         RunLoop.main.add(timer, forMode: .common)
         autoTimer = timer
