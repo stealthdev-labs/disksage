@@ -153,7 +153,10 @@ If DiskSage reclaimed some space and you'd like to say thanks, donations are
 welcome but never required. They simply fund development.
 
 - **Boosty:** <https://boosty.to/opensoursedisk>
+- **Bitcoin (BTC):** `14HunJ1WC3e1eBxqDZacsAA5ddeQxSvfWW`
+- **Ethereum (ERC-20):** `0x0ac4caf5b3f0460fbedeb15b61435fd7417f1598`
 - **USDT (TRC-20 / TRON):** `TYWkDcERszTCfYZjeScKXPmn2LrDugdMmc`
+- **TON:** `UQDfZ-EU_WPNI5Be0o8JqfBIfseXIRaMxk8QxLYAXjRsfcmf`
 
 Nothing is gated behind donations — the entire app is free.
 
