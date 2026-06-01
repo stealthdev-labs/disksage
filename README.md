@@ -165,7 +165,7 @@ Sources/DiskSage/
   Views/      SwiftUI: sunburst, explore, cleanup, inspector, settings
 Scripts/      bundle.sh (build .app), make_icon.swift, test.sh
 Tests/        Swift Testing suite for the engine, license, formatting
-website/      Marketing landing page (static HTML/CSS)
+docs/         Marketing landing page (static HTML/CSS) — served via GitHub Pages
 ```
 
 ## Privacy
