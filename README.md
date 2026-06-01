@@ -12,6 +12,7 @@ your disk — plus a built-in advisor that tells you, in plain language, what's
 
 [Features](#features) · [How the advisor works](#the-advisor-not-a-cloud-ai) · [Build from source](#build-from-source) · [Pro & pricing](#pro--pricing) · [Contributing](CONTRIBUTING.md)
 
+[![CI](https://github.com/stealthdev-labs/disksage/actions/workflows/ci.yml/badge.svg)](https://github.com/stealthdev-labs/disksage/actions/workflows/ci.yml)
 ![platform](https://img.shields.io/badge/platform-macOS%2014%2B-blue)
 ![language](https://img.shields.io/badge/Swift-5.9%2B-orange)
 ![license](https://img.shields.io/badge/license-MIT-green)
