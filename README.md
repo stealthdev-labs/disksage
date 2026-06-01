@@ -139,8 +139,8 @@ not DRM.
 If DiskSage reclaimed some space and you'd like to say thanks, donations are
 welcome but never required. They simply fund development.
 
+- **Boosty:** <https://boosty.to/opensoursedisk>
 - **USDT (TRC-20 / TRON):** `TYWkDcERszTCfYZjeScKXPmn2LrDugdMmc`
-<!-- Boosty link to be added. -->
 
 Nothing is gated behind donations — the entire app is free.
 

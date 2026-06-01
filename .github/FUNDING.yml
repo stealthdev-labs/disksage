@@ -1,8 +1,5 @@
 # Shows a "Sponsor" button on the GitHub repo. DiskSage is free & open source;
 # this is optional "support development", not a paywall.
 custom:
+  - "https://boosty.to/opensoursedisk"
   - "https://stealthdev-labs.github.io/disksage/#support"
-
-# Boosty / Ko-fi links can be added here once set up, e.g.:
-# custom:
-#   - "https://boosty.to/your-name"
